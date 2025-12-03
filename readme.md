@@ -1,45 +1,108 @@
+
+## 🔌 Framework Integration
+
+<details>
+<summary><b>ESX Integration</b></summary>
+
+The HUD automatically detects ESX and displays:
+- Job & grade
+- Money (cash, bank, black money)
+- Society funds (if applicable)
+
+</details>
+
+<details>
+<summary><b>QBCore Integration</b></summary>
+
+The HUD automatically detects QBCore and displays:
+- Job & duty status
+- Cash & bank balance
+- Gang information (if applicable)
+
+</details>
+
+<details>
+<summary><b>Standalone Mode</b></summary>
+
+When no framework is detected, the HUD operates in standalone mode with basic player stats.
+
+</details>
+
+## 🛠️ Dependencies
+
+- **Required:**
+  - None (standalone compatible)
+
+- **Optional:**
+  - ESX Legacy / ESX 1.2+ (for framework features)
+  - QBCore (for framework features)
+  - pma-voice / mumble-voip (for voice indicator)
+  - LegacyFuel / ox_fuel (for fuel display)
+
+## 📸 Screenshots
+
 <div align="center">
 
-# 🎮 FiveM Custom HUD
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-3ABFEF.svg?style=for-the-badge)](LICENSE)
-[![FiveM](https://img.shields.io/badge/FiveM-Compatible-3ABFEF?style=for-the-badge&logo=fivem&logoColor=white)](https://fivem.net)
-[![Lua](https://img.shields.io/badge/Lua-Script-3ABFEF?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org/)
-
-**A modern, lightweight, and highly customizable HUD system for FiveM servers**
-
-[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Support](#-support)
+![HUD Preview 1](https://via.placeholder.com/800x450?text=HUD+Screenshot+1)
+![HUD Preview 2](https://via.placeholder.com/800x450?text=HUD+Screenshot+2)
 
 </div>
 
+> *Replace placeholder images with actual screenshots*
+
+## 🤝 Support
+
+Need help or found a bug? 
+
+- **Discord:** [Join our community](https://discord.gg/2qFtaRPHQu)
+- **Issues:** [Report bugs here](../../issues)
+- **Wiki:** [Documentation & guides](../../wiki)
+
+## 🚀 Roadmap
+
+- [ ] Advanced status effects system
+- [ ] Vehicle damage indicators
+- [ ] Minimap integration
+- [ ] Custom notifications system
+- [ ] Additional themes & styles
+- [ ] Compatibility with more frameworks
+
+## 📝 Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting pull requests.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 💡 Credits
+
+Developed with ❤️ by [Luckav](https://github.com/luckav-dev)
+
+Special thanks to:
+- FiveM Community
+- ESX & QBCore Teams
+- All contributors and testers
+
 ---
 
-## 📋 Overview
+<div align="center">
 
-This HUD resource provides a clean, performance-optimized interface for FiveM roleplay servers. Built with modern web technologies and optimized Lua scripting, it offers seamless integration with ESX/QBCore frameworks while maintaining flexibility for standalone implementations.
+### 🌟 If you find this resource useful, please consider giving it a star!
 
-## ✨ Features
+[![GitHub Stars](https://img.shields.io/github/stars/luckav-dev/fivem-hud?style=social)](../../stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/luckav-dev/fivem-hud?style=social)](../../network/members)
 
-- **🎨 Modern Design** - Clean, minimalist interface that doesn't obstruct gameplay
-- **⚡ Optimized Performance** - Minimal resource usage (0.00-0.01ms idle)
-- **🔧 Highly Customizable** - Easy configuration through config files
-- **📱 Responsive Layout** - Adapts to different screen resolutions
-- **🎭 Framework Support** - Compatible with ESX, QBCore, and standalone setups
-- **🔄 Real-time Updates** - Smooth animations and instant status updates
-- **🌐 Multi-language Support** - Built-in localization system
+**[View More Projects](https://github.com/luckav-dev?tab=repositories)** | **[Join Discord](https://discord.gg/2qFtaRPHQu)**
 
-### Display Components
-
-- Health & Armor indicators
-- Stamina & Oxygen bars
-- Vehicle speed & fuel gauge
-- Street name & location display
-- Voice chat indicator
-- Custom status effects
-- Money & bank balance (framework-dependent)
-
-## 📦 Installation
-
-1. **Download** the latest release from the [releases page](../../releases)
-2. **Extract** the `fivem-hud` folder to your server's `resources` directory
-3. **Add** the resource to your `server.cfg`:
+</div>
