@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiveM HUD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="street-container" id="street-container">
+        <div class="street-text" id="street-name">XOXO PISTOLAS DEV</div>
+    </div>
+
+    <div class="hud-container">
+        <div class="status-row">
+            <div class="status-card health">
+                <div class="icon-container">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="health-fill"></div>
+                </div>
+            </div>
+
+            <div class="status-card armor">
+                <div class="icon-container">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="armor-fill"></div>
+                </div>
+            </div>
+
+            <div class="status-card hunger">
+                <div class="icon-container">
+                    <i class="fas fa-burger"></i>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="hunger-fill"></div>
+                </div>
+            </div>
+
+            <div class="status-card thirst">
+                <div class="icon-container">
+                    <i class="fas fa-droplet"></i>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="thirst-fill"></div>
+                </div>
+            </div>
+
+            <div class="status-card stamina">
+                <div class="icon-container">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="stamina-fill"></div>
+                </div>
+            </div>
+
+            <div class="status-card stress">
+                <div class="icon-container">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="stress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="car-hud" id="car-hud">
+            <div class="speed-container">
+                <span class="speed-value" id="speed-val">0</span>
+                <span class="speed-unit">KM/H</span>
+            </div>
+            <div class="car-stats">
+                <div class="stat-item">
+                    <i class="fas fa-gas-pump"></i>
+                    <span id="fuel-val">100L</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-gear"></i>
+                    <span id="gear-val">1</span>
+                </div>
+            </div>
+            <div class="rpm-bar">
+                <div class="rpm-fill" id="rpm-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
