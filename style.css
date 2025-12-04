@@ -91,8 +91,7 @@ body {
 }
 
 .health .progress-fill {
-    background: linear-gradient(90deg, #C0392B, #E74C3C);
-    box-shadow: 0 0 8px rgba(231, 76, 60, 0.6);
+    background: #4900d1;
 }
 
 .armor .icon-container i {
@@ -101,8 +100,7 @@ body {
 }
 
 .armor .progress-fill {
-    background: #2980B9;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+    background: #4900d1;
 }
 
 .hunger .icon-container i {
@@ -111,8 +109,7 @@ body {
 }
 
 .hunger .progress-fill {
-    background: #E67E22;
-    box-shadow: 0 0 8px rgba(230, 126, 34, 0.6);
+    background: #4900d1;
 }
 
 .thirst .icon-container i {
@@ -121,8 +118,7 @@ body {
 }
 
 .thirst .progress-fill {
-    background: #16A085;
-    box-shadow: 0 0 8px rgba(26, 188, 156, 0.6);
+    background: #4900d1;
 }
 
 .stamina .icon-container i {
@@ -131,8 +127,7 @@ body {
 }
 
 .stamina .progress-fill {
-    background: #F1C40F;
-    box-shadow: 0 0 8px rgba(241, 196, 15, 0.6);
+    background: #4900d1;
 }
 
 .stress .icon-container i {
@@ -141,8 +136,7 @@ body {
 }
 
 .stress .progress-fill {
-    background:  #9B59B6;
-    box-shadow: 0 0 8px rgba(155, 89, 182, 0.6);
+    background:  rgb(73, 0, 209);
 }
 
 @keyframes pulse-icon {
@@ -235,32 +229,31 @@ body {
 
 .rpm-fill {
     height: 100%;
-    background: #2ECC71;
+    background: #330091;
     transition: width 0.1s linear, background 0.3s ease;
     box-shadow: 0 0 6px currentColor;
 }
 
 .street-container {
     position: absolute;
-    top: clamp(12px, 1.6vh, 20px);
+    top: 0.1vh;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(15, 15, 25, 0.85);
-    backdrop-filter: blur(6px);
+    background: rgba(15, 15, 25, 0);
     padding: clamp(5px, 0.6vw, 8px) clamp(12px, 1.5vw, 20px);
     border-radius: clamp(12px, 1.5vw, 20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0);
     display: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
 }
 
 .street-text {
     color: #FFFFFF;
-    font-weight: 700;
+    font-weight: 900;
     font-size: clamp(10px, 1vw, 13px);
     letter-spacing: clamp(0.2px, 0.04vw, 0.5px);
     text-transform: uppercase;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.938);
 }
 
 @media (max-width: 1280px) {

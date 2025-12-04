@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'XoxoPistolas'
-description 'Custom FiveM HUD with CarHUD and Minimap Control'
-version '1.0.0'
+description 'Custom FiveM HUD with CarHUD and Minimap Control - Fixed Version'
+version '1.1.0'
 
 ui_page 'index.html'
 

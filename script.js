@@ -45,14 +45,14 @@ window.addEventListener('message', function (event) {
                 
                 if (data.rpm > startRpm) {
                     const t = (data.rpm - startRpm) / (1.0 - startRpm);
-                    r = Math.round(129 - (129 - 60) * t);
-                    g = Math.round(74 - (74 - 0) * t);
-                    b = Math.round(201 - (201 - 75) * t);
+                    r = Math.round(51 - (51 - 19) * t);
+                    g = Math.round(0 - (0 - 0) * t);
+                    b = Math.round(145 - (145 - 56) * t);
                 } else {
-                    r = 129; g = 74; b = 201;
+                    r = 51; g = 0; b = 145;
                 }
                 
-                rpmFillEl.style.background = `rgb(${r}, ${g}, ${b})`;
+                rpmFillEl.style.background = `rgb(73, 0, 209)`;
             }
         } else {
             carHud.style.display = 'none';
@@ -78,7 +78,7 @@ function updateStatus(type, value) {
     }
     
     if (type === 'armor') {
-        card.style.opacity = value <= 0 ? '0.0' : '1';
+    card.style.display = value <= 0 ? 'none' : 'flex'
     }
 }
 
