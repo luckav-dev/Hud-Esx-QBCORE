@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://media.discordapp.net/attachments/1371648887865081906/1445079850577825924/image.png?ex=6931adfc&is=69305c7c&hm=b19a8120de49c56264658965e3c91d38d10d0e17837f9677600e1cff82fb6a53&=&format=webp&quality=lossless&width=1779&height=902" alt="Custom HUD Preview" width="100%"/>
+<img src="https://media.discordapp.net/attachments/1445896089088819230/1446255885323337748/image.png?ex=69335241&is=693200c1&hm=6143222d962ff45084bf1ae55e190d51ad1e7878979ee68eb91990b6c5523b96&=&format=webp&quality=lossless&width=1796&height=902" alt="Custom HUD Preview" width="100%"/>
 
 # 🎮 Custom FiveM HUD
 
