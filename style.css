@@ -20,8 +20,8 @@ body {
 .hud-container {
     padding: 0;
     position: absolute;
-    bottom: clamp(12px, 1.2vw, 20px);
-    left: clamp(15px, 1.5vw, 25px);
+    bottom: 1vh;
+    left: 3vh;
     display: flex;
     align-items: flex-end;
     transform-origin: bottom left;
@@ -157,8 +157,9 @@ body {
 
 .car-hud {
     display: none;
-    margin-left: clamp(8px, 1vw, 12px);
-    background: rgba(10, 10, 15, 0.9);
+    margin-left: 6vh;
+    bottom: 7vh;
+    background: rgb(10, 10, 15);
     border-radius: clamp(5px, 0.6vw, 8px);
     padding: clamp(6px, 0.7vw, 9px) clamp(10px, 1.2vw, 14px);
     width: clamp(110px, 12vw, 145px);
