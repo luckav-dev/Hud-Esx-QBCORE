@@ -1,5 +1,6 @@
 local QBCore = nil
 local ESX = nil
+
 local hunger = 100
 local thirst = 100
 local stress = 0
@@ -29,38 +30,41 @@ RegisterNetEvent('hud:client:UpdateStress', function(newStress)
     stress = newStress
 end)
 
-local function GetMinimapAnchor()
-    local safezone = GetSafeZoneSize()
-    local safezone_x = 1.0 / 20.0
-    local safezone_y = 1.0 / 20.0
-    local aspect_ratio = GetAspectRatio(0)
-    local res_x, res_y = GetActiveScreenResolution()
-    local xscale = 1.0 / res_x
-    local yscale = 1.0 / res_y
-    local Minimap = {}
-
-    Minimap.width = xscale * (res_x / (4 * aspect_ratio))
-    Minimap.height = yscale * (res_y / 5.674)
-    Minimap.left_x = xscale * (res_x * (safezone_x * (math.abs(safezone - 1.0) * 10)))
-    Minimap.bottom_y = 1.0 - 0.025 
-    Minimap.right_x = Minimap.left_x + Minimap.width
-    Minimap.top_y = Minimap.bottom_y - Minimap.height
-    Minimap.x = Minimap.left_x
-    Minimap.y = Minimap.top_y
-    Minimap.xunit = xscale
-    Minimap.yunit = yscale
-    return Minimap
-end
-
 Citizen.CreateThread(function()
-    local minimap = RequestStreamedTextureDict('squaremap', false)
-    SetMinimapClipType(0)
-    AddReplaceTexture('platform:/textures/graphics', 'radarmasksm', 'squaremap', 'radarmasksm')
+    SetRadarBigmapEnabled(true, false)
+    SetRadarBigmapEnabled(false, false)
     
-    SetMinimapComponentPosition('minimap', 'L', 'B', 0.0, 0.0, 0.175, 0.25)
-    SetMinimapComponentPosition('minimap_mask', 'L', 'B', 0.0, 0.0, 0.175, 0.25)
-    SetMinimapComponentPosition('minimap_blur', 'L', 'B', 0.0, 0.0, 0.175, 0.25)
-
+    Wait(50)
+    
+    local minimap = RequestScaleformMovie("minimap")
+    SetRadarBigmapEnabled(true, false)
+    SetRadarBigmapEnabled(false, false)
+    Wait(0)
+    
+    local defaultAspectRatio = 1920 / 1080
+    local resolutionX, resolutionY = GetActiveScreenResolution()
+    local aspectRatio = resolutionX / resolutionY
+    local minimapOffset = 0
+    
+    if aspectRatio > defaultAspectRatio then
+        minimapOffset = ((defaultAspectRatio - aspectRatio) / 3.6) - 0.008
+    end
+    
+    RequestStreamedTextureDict("squaremap", false)
+    if not HasStreamedTextureDictLoaded("squaremap") then
+        Wait(150)
+    end
+    
+    SetMinimapClipType(0)
+    AddReplaceTexture("platform:/textures/graphics", "radarmasksm", "squaremap", "radarmasksm")
+    AddReplaceTexture("platform:/textures/graphics", "radarmask1g", "squaremap", "radarmasksm")
+    
+    SetMinimapComponentPosition("minimap", "L", "B", -0.0045 + minimapOffset, 0.002, 0.150, 0.188888)
+    SetMinimapComponentPosition("minimap_mask", "L", "B", 0.0 + minimapOffset, 0.0, 0.128, 0.20)
+    SetMinimapComponentPosition("minimap_blur", "L", "B", -0.03 + minimapOffset, 0.002, 0.266, 0.237)
+    
+    SetBlipAlpha(GetNorthRadarBlip(), 0)
+    
     while true do
         local ped = PlayerPedId()
         local player = PlayerId()
@@ -71,12 +75,12 @@ Citizen.CreateThread(function()
         if QBCore then
             local playerData = QBCore.Functions.GetPlayerData()
             if playerData.metadata then
-                hunger = playerData.metadata['hunger']
-                thirst = playerData.metadata['thirst']
-                stress = playerData.metadata['stress']
+                hunger = playerData.metadata['hunger'] or 100
+                thirst = playerData.metadata['thirst'] or 100
+                stress = playerData.metadata['stress'] or 0
             end
         end
-
+        
         SendNUIMessage({
             action = 'updateStatus',
             health = health,
@@ -86,18 +90,17 @@ Citizen.CreateThread(function()
             stamina = stamina,
             stress = stress
         })
-
+        
         if IsPedInAnyVehicle(ped, false) then
             local vehicle = GetVehiclePedIsIn(ped, false)
-            local speed = GetEntitySpeed(vehicle) * 3.6 
+            local speed = GetEntitySpeed(vehicle) * 3.6
             local fuel = GetVehicleFuelLevel(vehicle)
             local gear = GetVehicleCurrentGear(vehicle)
             local rpm = GetVehicleCurrentRpm(vehicle)
-            
             local coords = GetEntityCoords(ped)
             local streetHash = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
             local streetName = GetStreetNameFromHashKey(streetHash)
-
+            
             DisplayRadar(true)
             
             SendNUIMessage({
@@ -111,12 +114,13 @@ Citizen.CreateThread(function()
             })
         else
             DisplayRadar(false)
+            
             SendNUIMessage({
                 action = 'updateVehicle',
                 show = false
             })
         end
-
+        
         Citizen.Wait(200)
     end
 end)
